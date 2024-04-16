@@ -6,7 +6,7 @@ import Bell from "@iconify-icons/ep/bell";
 
 const noticesNum = ref(0);
 const notices = ref(noticesData);
-const activeKey = ref(noticesData[0].key);
+const activeKey = ref(noticesData[0]?.key);
 
 notices.value.map(v => (noticesNum.value += v.list.length));
 </script>
