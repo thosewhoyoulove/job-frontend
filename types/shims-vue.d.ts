@@ -14,3 +14,5 @@ declare module "vue-virtual-scroller";
 declare module "vuedraggable/src/vuedraggable";
 //vite-plugin-fake-server/client
 declare module "vite-plugin-fake-server/client";
+//vite-plugin-fake-server
+declare module "vite-plugin-fake-server";
