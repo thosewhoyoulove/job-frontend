@@ -83,5 +83,41 @@
       <div class="loader"></div>
     </div>
     <script type="module" src="/src/main.ts"></script>
+    <script src="https://web-9gikcbug35bad3a8-1304825656.tcloudbaseapp.com/sdk/1.3.0/cloud.js"></script>
   </body>
+  <script>
+    // window.onload = async function() {
+    //     var c1 = new cloud.Cloud({
+    //         identityless: true,
+    //         resourceAppid: 'wx54c98dc04e490010', // 替换成自己的
+    //         resourceEnv: "prod-9glt4rzo739ef9b6", // 替换成自己的
+    //     });
+    //     await c1.init();
+
+    //     const res = await c1.callContainer({
+    //         path: "/record/getRecordByChatId",
+    //         method: 'GET',
+    //         data: {
+    //             chatId: 123
+    //         },
+    //         header: {
+    //             "X-WX-SERVICE": "mini-nestjs-server"
+    //         }
+    //     });
+
+    // }
+    // 初始化实例并赋值给全局对象
+    window.onload = async function () {
+      async function initializeCloudInstance() {
+        const c1 = new cloud.Cloud({
+          identityless: true,
+          resourceAppid: "wx54c98dc04e490010", // 替换成自己的
+          resourceEnv: "prod-9glt4rzo739ef9b6" // 替换成自己的
+        });
+        await c1.init();
+        return c1;
+      }
+      window.c1 = await initializeCloudInstance();
+    };
+  </script>
 </html>
